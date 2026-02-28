@@ -15,12 +15,14 @@ EdgeDriver driver;
 @Given("launch orangehrm login page")
 public void orangehrm_loginpage()
 {	
+	System.setProperty("webdriver.edge.driver","C:\\vaibhavicorejava\\automationatesting1\\driverresources\\msedgedriver.exe");
+	
 	driver = new EdgeDriver();
 	driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
 	driver.manage().window().maximize();
-	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 }
-@When(" enter username and password of orangehrm website")
+@When("enter username and password of orangehrm website")
 public void enter_username_password()
 {
 	driver.findElement(By.name("username")).sendKeys("vaibhavi");
